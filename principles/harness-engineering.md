@@ -15,6 +15,9 @@ metrics, screenshots, or tooling names.
 Terminology such as "harness engineering," "agent legibility," "golden
 principles," and "garbage collection" is adopted from the source article.
 
+Companion brief: [Harness Sensors](harness-sensors.md) zooms in on the feedback
+side of the harness: sensors, computational checks, and agent self-correction.
+
 ## Source Context
 
 The article describes an experiment: a software product built under a hard

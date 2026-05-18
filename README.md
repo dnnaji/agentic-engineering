@@ -15,6 +15,8 @@ translation of OpenAI's article
 
 - [Harness Engineering](principles/harness-engineering.md) — the source-context
   brief preserving the article's operating model for future agents.
+- [Harness Sensors](principles/harness-sensors.md) — the feedback side of the
+  harness: sensors, computational checks, and agent self-correction.
 
 ## Mental Model
 
