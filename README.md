@@ -17,6 +17,9 @@ translation of OpenAI's article
   brief preserving the article's operating model for future agents.
 - [Harness Sensors](principles/harness-sensors.md) — the feedback side of the
   harness: sensors, computational checks, and agent self-correction.
+- [Code as Conceptual Model](principles/code-as-conceptual-model.md) — why code
+  remains valuable as vocabulary, abstraction, and shared understanding in the
+  LLM era.
 
 ## Mental Model
 

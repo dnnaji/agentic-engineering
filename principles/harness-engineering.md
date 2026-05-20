@@ -15,8 +15,12 @@ metrics, screenshots, or tooling names.
 Terminology such as "harness engineering," "agent legibility," "golden
 principles," and "garbage collection" is adopted from the source article.
 
-Companion brief: [Harness Sensors](harness-sensors.md) zooms in on the feedback
-side of the harness: sensors, computational checks, and agent self-correction.
+Companion briefs:
+
+- [Harness Sensors](harness-sensors.md) zooms in on the feedback side of the
+  harness: sensors, computational checks, and agent self-correction.
+- [Code as Conceptual Model](code-as-conceptual-model.md) explains why the
+  codebase itself is part of the harness and context.
 
 ## Source Context
 
