@@ -33,3 +33,8 @@ Constraints: original composition; no company logos; no copyrighted screenshots;
 
 - `agentic-engineering-loop.png`: broad agentic engineering system loop.
 - `harness-sensors-loop.png`: feed-forward and feedback sensor loop.
+- `good-job-spec-loop.png`: verification criteria for agent work quality.
+- `production-function-changed-loop.png`: cheaper rules, migrations, tests, and
+  ratchets.
+- `faster-was-the-problem-loop.png`: speed balanced by judgment, maintenance,
+  validation, and customer alignment.

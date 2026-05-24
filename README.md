@@ -7,7 +7,7 @@ loops, and constraints so coding agents can do reliable software engineering
 work with less human intervention.
 
 This repo collects public, agent-readable notes on agentic engineering and
-harness engineering. The first principle brief is a high-fidelity public
+harness engineering. The foundational principle brief is a high-fidelity public
 translation of OpenAI's article
 ["Harness engineering: leveraging Codex in an agent-first world"](https://openai.com/index/harness-engineering/).
 
@@ -20,6 +20,14 @@ translation of OpenAI's article
 - [Code as Conceptual Model](principles/code-as-conceptual-model.md) — why code
   remains valuable as vocabulary, abstraction, and shared understanding in the
   LLM era.
+- [Good Job Spec](principles/good-job-spec.md) — why agents need written
+  verification criteria for taste, risk, review, done-ness, and proof.
+- [Production Function Changed](principles/production-function-changed.md) — why
+  cheaper implementation changes the economics of migrations, rules, tests, and
+  ratchets.
+- [Faster Was The Problem](principles/faster-was-the-problem.md) — why faster AI
+  output raises the bar for engineering judgment, maintenance, adoption, and
+  workflow design.
 
 ## Mental Model
 
