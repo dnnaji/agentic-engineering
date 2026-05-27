@@ -268,3 +268,7 @@ the harness protects. It is one of the most important parts of the harness.
 
 Good code gives future agents a language to work in. Poorly understood generated
 code creates cognitive debt that future agents will copy.
+
+[Context Engineering](context-engineering.md) explains the same relationship from
+the model's working-set side: clear names, boundaries, tests, and examples reduce
+the amount of prose an agent needs before it can act coherently.

@@ -17,6 +17,8 @@ principles," and "garbage collection" is adopted from the source article.
 
 Companion briefs:
 
+- [Context Engineering](context-engineering.md) explains how to curate the
+  model's finite working set while agents operate inside the harness.
 - [Harness Sensors](harness-sensors.md) zooms in on the feedback side of the
   harness: sensors, computational checks, and agent self-correction.
 - [Code as Conceptual Model](code-as-conceptual-model.md) explains why the

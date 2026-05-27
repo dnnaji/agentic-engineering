@@ -10,7 +10,8 @@ This brief is derived from Thoughtworks' article
 ["Harness engineering and agent feedback: Exploring AI coding sensors"](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors)
 by Birgitta Böckeler and Chris Ford, published May 13, 2026. It is a companion
 to [Harness Engineering](harness-engineering.md), which covers the broader
-operating model.
+operating model, and [Context Engineering](context-engineering.md), which covers
+what the model sees while working.
 
 ## Core Frame
 
@@ -22,6 +23,12 @@ A harness has two sides:
 | Feedback | Show the agent what it actually produced after generation. | Tests, lint, static analysis, architecture checks, coverage, mutation tests, runtime signals. |
 
 Feed-forward reduces ambiguity. Feedback catches drift.
+
+[Context engineering](context-engineering.md) cuts across both sides: it shapes
+feed-forward material before generation and curates the working set in flight:
+message history, tool results, retrieval, notes, compaction, and subagents.
+Treat the two-column table as the source article's framing for sensors, not as a
+claim that every harness concern is purely pre- or post-generation.
 
 In an ideal world, instructions and guardrails would be enough. In real
 software, agents need sensors because they do not reliably satisfy every
@@ -156,3 +163,8 @@ loops, autonomy, and cleanup.
 Harness sensors zoom in on one load-bearing part of that model: feedback. They
 make the harness less dependent on one-shot instructions by giving agents and
 humans a reliable way to see what actually happened.
+
+[Context Engineering](context-engineering.md) is the input and in-flight
+companion: it curates what the model sees on each turn. Harness sensors are the
+output companion: they evaluate what the agent produced and return repair
+signals.
