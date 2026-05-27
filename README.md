@@ -15,6 +15,9 @@ translation of OpenAI's article
 
 - [Harness Engineering](principles/harness-engineering.md) — the source-context
   brief preserving the article's operating model for future agents.
+- [Context Engineering](principles/context-engineering.md) — context as a finite
+  attention budget: curating prompts, tools, examples, history, retrieval,
+  memory, and compaction so the agent sees the right working set.
 - [Harness Sensors](principles/harness-sensors.md) — the feedback side of the
   harness: sensors, computational checks, and agent self-correction.
 - [Code as Conceptual Model](principles/code-as-conceptual-model.md) — why code

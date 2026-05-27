@@ -32,6 +32,8 @@ Constraints: original composition; no company logos; no copyrighted screenshots;
 ## Existing Assets
 
 - `agentic-engineering-loop.png`: broad agentic engineering system loop.
+- `context-engineering-loop.png`: context sources filtered into a finite working
+  set before agent action.
 - `harness-sensors-loop.png`: feed-forward and feedback sensor loop.
 - `good-job-spec-loop.png`: verification criteria for agent work quality.
 - `production-function-changed-loop.png`: cheaper rules, migrations, tests, and
