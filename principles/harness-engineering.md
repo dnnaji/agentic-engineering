@@ -1,16 +1,16 @@
-# Agentic Engineering
+# Harness Engineering
 
 ![Agentic Engineering loop](../assets/agentic-engineering-loop.png)
 
-Agentic engineering is the practice of designing repositories, tools, feedback
+Harness engineering is the practice of designing repositories, tools, feedback
 loops, and constraints so coding agents can do reliable software engineering
 work with less human intervention.
 
-This repo is a high-fidelity public brief derived from OpenAI's article
-["Harness engineering: leveraging Codex in an agent-first world"](https://openai.com/index/harness-engineering/).
-It preserves the article's operating model in generic terms so future agents can
-inherit the same context without depending on OpenAI's internal product,
-metrics, screenshots, or tooling names.
+This brief is a high-fidelity public translation of OpenAI's article
+["Harness engineering: leveraging Codex in an agent-first world"](https://openai.com/index/harness-engineering/),
+published February 11, 2026. It preserves the article's operating model in
+generic terms so future agents can inherit the same context without depending
+on OpenAI's internal product, metrics, screenshots, or tooling names.
 
 Terminology such as "harness engineering," "agent legibility," "golden
 principles," and "garbage collection" is adopted from the source article.
@@ -23,6 +23,12 @@ Companion briefs:
   harness: sensors, computational checks, and agent self-correction.
 - [Code as Conceptual Model](code-as-conceptual-model.md) explains why the
   codebase itself is part of the harness and context.
+- [Good Job Spec](good-job-spec.md) explains why the harness needs written
+  verification criteria, not only instructions and tools.
+- [Production Function Changed](production-function-changed.md) explains the
+  economic reason the harness should convert taste into executable checks.
+- [Faster Was The Problem](faster-was-the-problem.md) adds the team-operating
+  layer: adoption, maintenance, and ownership around the harness.
 
 ## Source Context
 
@@ -175,6 +181,23 @@ When an agent fails, the useful question is:
 The answer should usually become part of the repository. A one-off correction in
 chat helps once. A checked-in doc, script, test, lint, skill, or workflow helps
 future runs.
+
+## Layered Harness Model
+
+Birgitta Böckeler's article
+["Harness engineering for coding agent users"](https://martinfowler.com/articles/harness-engineering.html)
+(martinfowler.com, April 2, 2026) and Thoughtworks' podcast
+["What is harness engineering?"](https://www.thoughtworks.com/en-us/insights/podcasts/technology-podcasts/what-harness-engineering)
+frame the harness as concentric layers: the model at the core, the coding
+agent's built-in builder harness around it, and an outer repo- and team-specific
+user harness that teams build to make agents reliable enough for production
+work.
+
+That distinction is useful because "harness" can mean both the coding
+assistant's built-in tool and prompt environment and the local system a team adds
+around it: docs, checks, workflows, skills, runtime access, review loops, and
+sensors. Harness engineering is the work of improving that outer layer, not
+merely asking the model to behave better.
 
 ## Harness Components
 
@@ -417,6 +440,10 @@ A useful loop:
 
 The source article refers to this pattern as a Ralph Wiggum Loop: iterate
 through self-review, agent review, and repair until the reviewers are satisfied.
+The term originates with Geoffrey Huntley's
+["Ralph Wiggum as a software engineer"](https://ghuntley.com/ralph/) technique:
+run an agent in a loop with fresh context each iteration, accumulating progress
+in files and git history rather than in the context window.
 
 Human review still matters for intent, taste, priority, and risk. The goal is to
 reserve human attention for judgment while agents handle routine correctness

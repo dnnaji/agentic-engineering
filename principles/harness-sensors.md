@@ -6,12 +6,25 @@ Harness sensors are the feedback side of an agent harness: tools and signals
 that observe what a coding agent actually produced, then help the agent or human
 decide what to repair next.
 
-This brief is derived from Thoughtworks' article
-["Harness engineering and agent feedback: Exploring AI coding sensors"](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors)
-by Birgitta Böckeler and Chris Ford, published May 13, 2026. It is a companion
-to [Harness Engineering](harness-engineering.md), which covers the broader
-operating model, and [Context Engineering](context-engineering.md), which covers
-what the model sees while working.
+This brief is derived from two Birgitta Böckeler sources:
+
+- ["Harness engineering for coding agent users"](https://martinfowler.com/articles/harness-engineering.html)
+  (martinfowler.com, April 2, 2026) — the primary articulation of the
+  guides/sensors framework, the computational/inferential split, regulation
+  categories, harnessability, and harness templates.
+- ["Harness engineering and agent feedback: Exploring AI coding sensors"](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors)
+  (Thoughtworks, with Chris Ford, May 13, 2026) — the follow-on experiment
+  applying sensors to a TypeScript dashboard.
+
+It is a companion to [Harness Engineering](harness-engineering.md), which
+covers the broader operating model, and
+[Context Engineering](context-engineering.md), which covers what the model sees
+while working.
+
+See also Thoughtworks' companion podcast
+["What is harness engineering?"](https://www.thoughtworks.com/en-us/insights/podcasts/technology-podcasts/what-harness-engineering),
+which reinforces the guides/feed-forward vs sensors/feedback split and adds the
+product-agent vs repo/team harness layering.
 
 ## Core Frame
 
@@ -83,6 +96,66 @@ Those tools are examples, not a fixed stack. The durable pattern is to expose
 code quality, architecture, and test-quality signals to the agent as part of the
 normal loop.
 
+## The Steering Loop
+
+The human's job is to steer the agent by iterating on the harness. Whenever an
+issue happens more than once, the feed-forward or feedback controls should be
+improved so the issue becomes less probable or impossible.
+
+Agents can help build their own harness: writing structural tests, drafting
+rules from observed failure patterns, scaffolding custom linters, and creating
+how-to guides from codebase archaeology. Cheap implementation makes custom
+sensors economical in a way they were not before.
+
+## Keep Quality Left
+
+Sensors have costs, so they must be distributed across the change lifecycle:
+
+- fast, cheap checks run before integration or even before a commit exists
+  (linters, fast tests, a basic review agent)
+- expensive checks run post-integration in the pipeline (mutation testing,
+  broad architecture review)
+- drift detectors run continuously against the codebase outside any single
+  change (dead-code scans, coverage-quality analysis, dependency scanners)
+- runtime sensors watch the deployed system (SLO degradation, log anomalies,
+  response-quality sampling)
+
+The earlier a sensor fires, the cheaper the repair.
+
+## Regulation Categories
+
+The harness regulates the codebase toward a desired state along distinct
+dimensions:
+
+| Category | Regulates | Maturity |
+| --- | --- | --- |
+| Maintainability harness | Internal code quality: duplication, complexity, coverage, style, structure. | Most mature; rich pre-existing tooling. |
+| Architecture fitness harness | Architecture characteristics: performance budgets, observability standards, boundary rules. | Established as fitness functions. |
+| Behaviour harness | Whether the application functionally does what is needed. | The open problem. |
+
+The behaviour harness is the hardest gap. Most current practice feeds forward a
+functional spec and feeds back an AI-generated test suite plus coverage, which
+puts heavy faith in tests the agent wrote for itself. Patterns such as approved
+fixtures help selectively, but verifying functional correctness well enough to
+reduce supervision remains unsolved.
+
+Sensors also have limits within maintainability: computational checks catch
+structural issues reliably, inferential checks partially catch semantic issues,
+and neither reliably catches misdiagnosis, overengineering, or misunderstood
+instructions. Correctness is outside any sensor's remit if the human never
+specified what they wanted.
+
+## Harnessability
+
+Not every codebase is equally amenable to harnessing. Typed languages give
+type-checking as a free sensor; clear module boundaries afford structural
+rules; strong frameworks remove whole classes of agent error. Böckeler calls
+the underlying properties "ambient affordances": structural properties of the
+environment that make it legible, navigable, and tractable for agents.
+
+Greenfield teams can bake harnessability in from day one. Legacy teams face the
+harder version: the harness is most needed where it is hardest to build.
+
 ## Bill Of Health
 
 A useful harness can summarize sensor output as a bill of health.
@@ -124,6 +197,13 @@ Each template would include both feed-forward material and sensors:
 The insight is that different application archetypes need different harnesses.
 There is no universal set of sensors that fits every repo.
 
+Böckeler grounds this in Ashby's Law of Requisite Variety: a regulator can only
+regulate what it has a model of. An agent can produce almost anything, so
+committing to a known topology narrows the space and makes a comprehensive
+harness achievable. Choosing a topology is a variety-reduction move, and teams
+may eventually pick stacks partly based on which harnesses already exist for
+them.
+
 ## Human Role
 
 Harness sensors do not remove the human from the loop. They raise the level at
@@ -150,8 +230,14 @@ level of abstraction.
 | Computational feedback | Deterministic checks | Objective rules should become executable. |
 | Inferential feedback | Interpreted signals | Some quality judgments need context. |
 | TypeScript dashboard experiment | Example sensor stack | Demonstrates sensors improving quality over iterations. |
+| Steering loop | Iterating on the harness | Repeated issues should improve controls, not just get re-fixed. |
+| Keep quality left | Lifecycle-distributed sensors | Earlier signals are cheaper to act on. |
+| Regulation categories | Maintainability, architecture fitness, behaviour | Names what each control is for and where coverage is weak. |
+| Behaviour harness gap | Unsolved functional verification | AI-graded AI tests are not yet trustworthy enough to drop supervision. |
+| Harnessability / ambient affordances | Codebase properties enabling controls | Types, boundaries, and frameworks determine which sensors are even possible. |
 | Bill of health | Sensor dashboard | Humans need a compact view of codebase state. |
 | Harness templates | Archetype-specific starting points | Different apps need different guides and sensors. |
+| Ashby's Law | Topology as variety reduction | A harness can only regulate what it can model. |
 | Situational awareness | Higher-level steering | Humans should focus on intent and judgment, not raw diff volume. |
 
 ## Relationship To Harness Engineering
