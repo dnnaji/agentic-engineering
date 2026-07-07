@@ -9,7 +9,9 @@ shortcuts, proof, and what counts as done.
 
 This brief is derived from Ryan Lopopolo's article
 ["What Does It Mean to Do a Good Job?"](https://hyperbo.la/w/what-does-it-mean-to-do-a-good-job/),
-published April 10, 2026. It is a companion to
+published April 10, 2026. Lopopolo also wrote the OpenAI article translated in
+[Harness Engineering](harness-engineering.md); this essay generalizes lessons
+from that same agent-first experiment. It is a companion to
 [Harness Engineering](harness-engineering.md), because it explains why agent
 harnesses need explicit quality criteria, not only instructions and tools.
 

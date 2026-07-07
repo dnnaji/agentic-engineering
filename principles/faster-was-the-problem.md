@@ -8,7 +8,10 @@ understanding, maintaining, validating, adopting, and owning what gets shipped.
 
 This brief is derived from David Fowler's LinkedIn article
 ["AI Made Us Faster. That Was the Problem"](https://www.linkedin.com/pulse/ai-made-us-faster-problem-david-fowler-mgnzc),
-published May 12, 2026. It is a companion to
+published May 12, 2026. The article is grounded in the Aspire team's
+experience: a roughly two-and-a-half-year-old open-source app-orchestration
+platform whose team is rebuilding its engineering loop to be AI-first, rather
+than a greenfield agent experiment. It is a companion to
 [Harness Engineering](harness-engineering.md), because it describes what happens
 when a real product team redesigns its engineering loop around AI instead of
 only using AI to generate more output.
@@ -28,6 +31,12 @@ The bottleneck moves. It does not disappear.
 
 The article's central warning is that the cost of production has fallen faster
 than the cost of maintenance.
+
+The source grounds this in a concrete anecdote: during a major architectural
+change, one engineer produced what felt like six months of code in about a
+week. The output was real, but with no back pressure on production, the team
+received more code than it could absorb, understand, and review — an
+overconfidence problem, not a capability problem.
 
 That creates a new failure mode:
 

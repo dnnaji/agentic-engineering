@@ -22,23 +22,6 @@ Code has two intertwined roles:
 If writing executable syntax gets cheaper, the valuable work does not disappear.
 It moves toward building better conceptual models.
 
-## Article Spine
-
-The source article follows this conceptual order:
-
-| Source article section | Public repo translation |
-| --- | --- |
-| Two Aspects of Code | Code is both machine instruction and conceptual model. |
-| Conceptual Models and Vocabulary | Shared vocabulary is how a model becomes visible and usable. |
-| Vocabulary in Code | Code translates business and technical vocabularies into types, interfaces, invariants, and workflows. |
-| Bounded Contexts and Local Vocabularies | Core business concepts must be discovered locally inside valid context boundaries. |
-| Programming Languages As Thinking Tools | Languages and specs shape how developers discover designs. |
-| Working with LLMs | LLMs map names, APIs, patterns, and examples to likely implementation structures. |
-| Cognitive Debt | Generated vocabulary without shared understanding creates long-term risk. |
-| Code as a shared Conceptual Model | Stable abstractions let teams and LLMs apply a shared language to new use cases. |
-| Code itself as Harness and Context | Well-structured code is one of the strongest forms of agent context and guardrail. |
-| Conclusion | Coding changes from producing syntax toward building better conceptual models. |
-
 ## Vocabulary Building
 
 Software development is an act of vocabulary building.

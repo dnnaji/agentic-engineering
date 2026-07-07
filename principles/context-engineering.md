@@ -48,18 +48,6 @@ plans, and decisions. The engineering problem is deciding what stays in the
 window, what gets compacted, what lives outside the window, and what should be
 retrieved only when needed.
 
-## Article Spine
-
-The source article follows this conceptual order:
-
-| Source article section | Public repo translation |
-| --- | --- |
-| Context engineering vs. prompt engineering | Context engineering manages the full inference state, not only prompt text. |
-| Why context engineering matters | Context windows are finite attention budgets and can suffer from context rot. |
-| Anatomy of effective context | System prompts, tools, examples, and message history all need curation. |
-| Context engineering for long-horizon tasks | Compaction, note-taking, and subagents keep work coherent beyond one window. |
-| Conclusion | Reliable agents need dynamic context pipelines, not static document dumps. |
-
 ## Anatomy Of Effective Context
 
 Effective context has several competing parts.

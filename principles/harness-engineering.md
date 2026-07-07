@@ -7,8 +7,12 @@ loops, and constraints so coding agents can do reliable software engineering
 work with less human intervention.
 
 This brief is a high-fidelity public translation of OpenAI's article
-["Harness engineering: leveraging Codex in an agent-first world"](https://openai.com/index/harness-engineering/),
-published February 11, 2026. It preserves the article's operating model in
+["Harness engineering: leveraging Codex in an agent-first world"](https://openai.com/index/harness-engineering/)
+([archived](https://web.archive.org/web/20260211225509/https://openai.com/index/harness-engineering/)),
+written by Ryan Lopopolo and published February 11, 2026. Lopopolo's essays
+translated in [Good Job Spec](good-job-spec.md) and
+[Production Function Changed](production-function-changed.md) generalize
+lessons from the same experiment. This brief preserves the article's operating model in
 generic terms so future agents can inherit the same context without depending
 on OpenAI's internal product, metrics, screenshots, or tooling names.
 
@@ -67,24 +71,6 @@ Scale and tempo from the source article:
 - single agent runs often lasting six or more hours
 - manual cleanup once consumed about one day per week before recurring cleanup
   agents replaced it
-
-## Article Spine
-
-The source article follows this conceptual order:
-
-| Source article section | Public repo translation |
-| --- | --- |
-| Empty git repository | Start from the harness, not just the code. |
-| Redefining the engineer | The engineer designs scaffolding, intent, and feedback loops. |
-| Increasing application legibility | Agents need runtime access to UI, logs, metrics, traces, and app state. |
-| Repository knowledge as system of record | Repo-local docs beat chat, memory, and external context. |
-| Agent legibility | Optimize the codebase for what agents can inspect and reason about. |
-| Enforcing architecture and taste | Use mechanical constraints to preserve coherence at agent speed. |
-| Throughput changes merge philosophy | Cheap correction loops change how PRs, reviews, and flakes are handled. |
-| What agent-generated means | Agents can own the whole lifecycle, not just feature code. |
-| Increasing autonomy | Autonomy grows only when validation, review, and recovery are encoded. |
-| Entropy and garbage collection | Agents replicate existing patterns, so cleanup must be continuous. |
-| What is still being learned | The long-term shape of fully agentic systems is not settled. |
 
 ## Concept Fidelity Map
 
@@ -604,18 +590,7 @@ Start here, then follow links to the narrow source of truth.
 - Prefer explicit schemas at external boundaries.
 ```
 
-## Mental Model
-
-Agentic engineering is not prompt engineering with a larger README.
-
-It is closer to platform engineering for a new kind of worker:
-
-- make the environment inspectable
-- make the right path easy
-- make the wrong path fail clearly
-- make feedback durable
-- make cleanup continuous
-
 The better the harness, the less the human has to babysit individual changes.
 The engineer's attention moves toward intent, taste, judgment, and the systems
-that let those things compound.
+that let those things compound. The repo-level
+[mental model](../README.md#mental-model) lives in the README.
