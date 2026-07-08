@@ -9,7 +9,9 @@ same mistake does not return.
 
 This brief is derived from Ryan Lopopolo's article
 ["The Production Function Changed"](https://hyperbo.la/w/production-function-changed/),
-published March 13, 2026. It is a companion to
+published March 13, 2026. Lopopolo also wrote the OpenAI article translated in
+[Harness Engineering](harness-engineering.md); this essay generalizes lessons
+from that same agent-first experiment. It is a companion to
 [Harness Engineering](harness-engineering.md), because it explains the economic
 reason harnesses should convert taste and invariants into executable checks.
 

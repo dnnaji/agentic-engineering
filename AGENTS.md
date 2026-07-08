@@ -1,5 +1,7 @@
 # Agent Instructions
 
+- This repo is documentation only: a place to read the briefs. Do not add
+  scripts, automation, checks, CI, or tooling.
 - Keep `README.md` short and navigational.
 - Put durable concept notes in `principles/`.
 - Read the relevant principle brief and its cited sources before changing concepts
