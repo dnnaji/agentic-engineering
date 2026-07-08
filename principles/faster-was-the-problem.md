@@ -34,7 +34,7 @@ than the cost of maintenance.
 
 The source grounds this in a concrete anecdote: during a major architectural
 change, one engineer produced what felt like six months of code in about a
-week. The output was real, but with no back pressure on production, the team
+week. The output was real, but with no back pressure on output, the team
 received more code than it could absorb, understand, and review — an
 overconfidence problem, not a capability problem.
 
