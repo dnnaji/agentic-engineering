@@ -35,7 +35,7 @@ than the cost of maintenance.
 The source grounds this in a concrete anecdote: during a major architectural
 change, one engineer produced what felt like six months of code in about a
 week. The output was real, but with no back pressure on output, the team
-received more code than it could absorb, understand, and review — an
+received more code than it could absorb, understand, and review: an
 overconfidence problem, not a capability problem.
 
 That creates a new failure mode:
@@ -119,6 +119,16 @@ They need to rethink the full loop:
 No universal workflow fits every team. Each team needs processes that match its
 codebase, product, customers, experience level, and risk profile.
 
+Cheaper execution also changes planning. When nearly every candidate
+improvement feels implementable, the constraint is no longer finding enough
+work. It is deciding what deserves attention and what evidence should move it
+to the front.
+
+Aspire responds with scenario-focused scorecards: track important product
+experiences, how they feel, and how good they are, then use repeated product and
+customer signals to redirect effort. Faster implementation makes prioritization
+and measurement more important, not less.
+
 ## Concept Fidelity Map
 
 | Source concept | Preserved here as | Why it matters |
@@ -132,6 +142,8 @@ codebase, product, customers, experience level, and risk profile.
 | Agent-readiness is codebase health | Harness health | Clear structure, tests, docs, commands, and workflows reduce bad output. |
 | Human carries context | Engineering judgment | Agents accelerate execution, but humans own direction and risk. |
 | Redesign the loop | Team-specific operating model | The system around agents matters more than isolated prompting. |
+| Everything feels doable | Prioritization and measurement bottleneck | Cheaper execution raises the value of deciding what deserves attention. |
+| Scenario-focused scorecards | Experience-level feedback | Repeated product signals redirect effort toward the most important scenarios. |
 
 ## Relationship To Agentic Engineering
 

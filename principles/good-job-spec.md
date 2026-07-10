@@ -3,7 +3,7 @@
 ![Good Job Spec loop](../assets/good-job-spec-loop.png)
 
 A good job spec is the written standard that lets agents and humans decide
-whether generated work is actually good enough. It captures the judgment teams
+whether generated work is good enough. It captures the judgment teams
 usually leave implicit: taste, risk tolerance, review posture, acceptable
 shortcuts, proof, and what counts as done.
 
@@ -90,7 +90,7 @@ can act, reviewers can decide, and future runs inherit the lesson.
 | Source concept | Preserved here as | Why it matters |
 | --- | --- | --- |
 | Verification was always the problem | Good job spec | Agents expose the quality criteria humans were carrying implicitly. |
-| Under-specified tasks | Hidden non-functional requirements | Taste, risk, polish, and done-ness must be named. |
+| Underspecified tasks | Hidden non-functional requirements | Taste, risk, polish, and doneness must be named. |
 | Shared human context | Repository-owned judgment | Agents need durable context instead of social absorption. |
 | Reviewer/implementer behavior | Review posture | Feedback loops need merge bias, deferral rules, and pushback paths. |
 | Write down what good means | Explicit verification criteria | The harness must define success before and after generation. |
@@ -108,4 +108,4 @@ state what good means, generate work, inspect what happened, then improve the
 spec or the sensor.
 
 The better the spec, the less the human has to re-explain taste, risk, and
-done-ness in every thread.
+doneness in every thread.
