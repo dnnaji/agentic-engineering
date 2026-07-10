@@ -7,14 +7,13 @@ loops, and constraints so coding agents can do reliable software engineering
 work with less human intervention.
 
 This brief is a high-fidelity public translation of OpenAI's article
-["Harness engineering: leveraging Codex in an agent-first world"](https://openai.com/index/harness-engineering/)
-([archived](https://web.archive.org/web/20260211225509/https://openai.com/index/harness-engineering/)),
+["Harness engineering: leveraging Codex in an agent-first world"](https://openai.com/index/harness-engineering/),
 written by Ryan Lopopolo and published February 11, 2026. Lopopolo's essays
 translated in [Good Job Spec](good-job-spec.md) and
 [Production Function Changed](production-function-changed.md) generalize
-lessons from the same experiment. This brief preserves the article's operating model in
-generic terms so future agents can inherit the same context without depending
-on OpenAI's internal product, metrics, screenshots, or tooling names.
+lessons from the same experiment. The brief preserves the article's operating
+model in generic terms so future agents can inherit the same context without
+depending on OpenAI's internal product, metrics, screenshots, or tooling names.
 
 Terminology such as "harness engineering," "agent legibility," "golden
 principles," and "garbage collection" is adopted from the source article.
@@ -66,7 +65,7 @@ Scale and tempo from the source article:
 - small team starting at three engineers and growing to seven
 - about 3.5 pull requests per engineer per day on average
 - internal daily users and external alpha testers
-- estimated build time around one tenth of manual implementation
+- estimated build time around one-tenth of manual implementation
 - `AGENTS.md` kept around 100 lines and used as a map
 - single agent runs often lasting six or more hours
 - manual cleanup once consumed about one day per week before recurring cleanup
@@ -187,7 +186,7 @@ merely asking the model to behave better.
 
 ## Harness Components
 
-This table is a README synthesis of the source article's operating model.
+This table synthesizes the source article's operating model.
 
 | Component | Role in the harness |
 | --- | --- |
@@ -206,7 +205,7 @@ This table is a README synthesis of the source article's operating model.
 Agents need to inspect the running system, not only the source tree.
 
 Application legibility means the app can be launched, driven, observed, changed,
-and re-checked by an agent inside the task loop.
+and rechecked by an agent inside the task loop.
 
 Useful runtime capabilities:
 
@@ -221,9 +220,9 @@ Useful runtime capabilities:
 - prove a fix with screenshots, videos, logs, or traces
 
 This turns vague goals into measurable work. "Make startup faster" becomes
-"prove startup completes under 800ms." "Improve this journey" becomes "show that
-no span in the critical journey exceeds the budget." "Fix this flow" becomes
-"drive the flow, capture the failure, patch it, and drive it again."
+"prove startup completes in less than 800 ms." "Improve this journey" becomes
+"show that no span in the critical journey exceeds the budget." "Fix this flow"
+becomes "drive the flow, capture the failure, patch it, and drive it again."
 
 Per-worktree app instances are especially important. They let multiple agents
 work independently without sharing a fragile local runtime. Each task can own
@@ -507,12 +506,12 @@ enforceable form. Examples:
 - turn repeated review comments into checks
 
 This functions like garbage collection. Debt is cheaper to remove continuously
-than in large painful bursts. Human taste is captured once, then enforced on
+than in large, painful bursts. Human taste is captured once, then enforced on
 future work.
 
 The source article's cadence is intentionally small: background cleanup tasks
 scan for deviations, update quality grades, and open targeted refactoring pull
-requests that can often be reviewed quickly or automerged.
+requests that can often be reviewed quickly or auto-merged.
 
 ## What Is Still Open
 
@@ -529,9 +528,11 @@ The direction is clear even if the endpoint is not: software engineering still
 requires discipline, but more of that discipline moves into scaffolding,
 environment design, and feedback systems.
 
-## Minimal Public Harness
+## Applied Synthesis: Minimal Public Harness
 
-For a public repository, the smallest useful version looks like this:
+The following applies the source's operating model to a generic public
+repository; it is not a layout presented in the article. The smallest useful
+version looks like this:
 
 ```text
 AGENTS.md
@@ -560,7 +561,9 @@ Start with:
 
 Then grow the harness only when a real failure proves what is missing.
 
-## Example `AGENTS.md`
+## Applied Synthesis: Example `AGENTS.md`
+
+This example is an applied public-repository pattern, not source text.
 
 ```md
 # Agent Instructions

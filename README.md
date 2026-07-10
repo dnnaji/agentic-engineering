@@ -8,10 +8,9 @@ environment it works in, defining how its output is judged, and owning the
 result as a team.
 
 This repo is a knowledge base of agent-readable principle briefs. Each brief is
-a high-fidelity public translation of one or more source articles, so a reader
-— human or agent — can understand and apply the concepts without reading every
-source. Harness engineering is one concept within the discipline, not a synonym
-for it.
+a high-fidelity public translation of one or more source articles, so human and
+agent readers can understand and apply the concepts without reading every source.
+Harness engineering is one concept within the discipline, not a synonym for it.
 
 ## Where To Start
 
@@ -46,7 +45,7 @@ Pick the brief that matches your question:
   remains valuable as vocabulary, abstraction, and shared understanding in the
   LLM era.
 - [Good Job Spec](principles/good-job-spec.md) — why agents need written
-  verification criteria for taste, risk, review, done-ness, and proof.
+  verification criteria for taste, risk, review, doneness, and proof.
 - [Production Function Changed](principles/production-function-changed.md) — why
   cheaper implementation changes the economics of migrations, rules, tests, and
   ratchets.

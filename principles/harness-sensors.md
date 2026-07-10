@@ -9,8 +9,8 @@ decide what to repair next.
 This brief is derived from two Birgitta Böckeler sources:
 
 - ["Harness engineering for coding agent users"](https://martinfowler.com/articles/harness-engineering.html)
-  (martinfowler.com, April 2, 2026) — the primary articulation of the
-  guides/sensors framework, the computational/inferential split, regulation
+  (martinfowler.com, April 2, 2026) — the primary articulation of guides and
+  sensors, the computational and inferential split, regulation
   categories, harnessability, and harness templates.
 - ["Harness engineering and agent feedback: Exploring AI coding sensors"](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors)
   (Thoughtworks, with Chris Ford, May 13, 2026) — the follow-on experiment
@@ -23,8 +23,9 @@ while working.
 
 See also Thoughtworks' companion podcast
 ["What is harness engineering?"](https://www.thoughtworks.com/en-us/insights/podcasts/technology-podcasts/what-harness-engineering),
-which reinforces the guides/feed-forward vs sensors/feedback split and adds the
-product-agent vs repo/team harness layering.
+which reinforces the distinction between guides as feed-forward and sensors as
+feedback. It also distinguishes a product agent's built-in harness from the
+outer harness supplied by its repository and team.
 
 ## Core Frame
 
@@ -139,11 +140,30 @@ puts heavy faith in tests the agent wrote for itself. Patterns such as approved
 fixtures help selectively, but verifying functional correctness well enough to
 reduce supervision remains unsolved.
 
+A test runner is computational: given a test suite, it returns a deterministic
+result. But an AI-authored test suite is inferential in how it chooses which
+behavior to encode and which assertions count as proof. Green output does not
+make those choices correct.
+
 Sensors also have limits within maintainability: computational checks catch
 structural issues reliably, inferential checks partially catch semantic issues,
 and neither reliably catches misdiagnosis, overengineering, or misunderstood
 instructions. Correctness is outside any sensor's remit if the human never
 specified what they wanted.
+
+## Exceptions Are Review Signals
+
+Computational sensors need an explicit escape hatch for cases where a warning is
+acceptable. A suppression should preserve the judgment in the codebase instead
+of silently discarding the signal.
+
+Useful exceptions:
+
+- require a local justification
+- stay as narrow as possible
+- remain searchable and reportable
+- give reviewers a starting point for inspecting overridden rules
+- preserve the sensor so later growth can still trigger it
 
 ## Harnessability
 
@@ -234,6 +254,8 @@ level of abstraction.
 | Keep quality left | Lifecycle-distributed sensors | Earlier signals are cheaper to act on. |
 | Regulation categories | Maintainability, architecture fitness, behaviour | Names what each control is for and where coverage is weak. |
 | Behaviour harness gap | Unsolved functional verification | AI-graded AI tests are not yet trustworthy enough to drop supervision. |
+| AI-authored tests | Computational result over inferential test design | A deterministic runner cannot prove that generated assertions encode the right behavior. |
+| Documented suppressions | Reviewable exception decisions | Narrow, searchable overrides preserve judgment without disabling the sensor. |
 | Harnessability / ambient affordances | Codebase properties enabling controls | Types, boundaries, and frameworks determine which sensors are even possible. |
 | Bill of health | Sensor dashboard | Humans need a compact view of codebase state. |
 | Harness templates | Archetype-specific starting points | Different apps need different guides and sensors. |

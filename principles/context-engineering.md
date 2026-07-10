@@ -8,7 +8,7 @@ set, not as a place to dump every instruction, log, document, and prior turn.
 
 This brief is derived from Anthropic's article
 ["Effective context engineering for AI agents"](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents),
-published September 29, 2025 by Anthropic's Applied AI team. Supporting sources
+published September 29, 2025, by Anthropic's Applied AI team. Supporting sources
 include Thoughtworks' Technology Radar blip
 ["Context engineering"](https://www.thoughtworks.com/radar/techniques/context-engineering),
 Thoughtworks' blip
@@ -64,6 +64,22 @@ Effective context has several competing parts.
 
 The practical rule is progressive disclosure: start with routing context, then
 load the narrow source of truth when the task needs it.
+
+## Who Loads Context?
+
+Context can enter the working set through three control paths:
+
+- **Human-invoked context** gives the operator explicit control, at the cost of
+  more manual work.
+- **Model-selected context** lets the model retrieve tools, skills, and sources
+  on demand, but selection remains probabilistic.
+- **Agent-loaded context** is injected deterministically by the surrounding
+  software at lifecycle points such as session start, file access, or
+  validation.
+
+A robust design chooses deliberately among these paths. Context engineering can
+increase the probability of useful behavior; it cannot guarantee that a model
+will notice, interpret, or apply every piece of guidance correctly.
 
 ## AGENTS.md Routes
 
@@ -178,6 +194,8 @@ what the agent can see before and during that production.
 | Finite context | Attention budget | Larger windows still require prioritization. |
 | Context rot | Degraded reasoning from noisy or oversized context | More context can reduce quality instead of improving it. |
 | Anatomy of context | Prompts, tools, examples, history, files, logs, memory | All inputs compete for the same window. |
+| Loading authority | Human, model, or agent software | Each path trades explicit control, automation, and predictability differently. |
+| Probabilistic control | Better context raises likelihood, not certainty | Context engineering cannot make model behavior deterministic. |
 | Tool design | Tools as context interfaces | Tool schemas and outputs shape behavior. |
 | Progressive disclosure | Routing first, detail on demand | Keeps `AGENTS.md` and principle briefs lightweight. |
 | Just-in-time retrieval | Load the narrow source when needed | Lets agents work from deep links instead of dumps. |
